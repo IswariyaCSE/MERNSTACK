@@ -1,0 +1,39 @@
+//TO USE THE DATABASE
+use mern1db
+
+//TO INSERT 10 DATAS OF CARS
+db.taskcollection.insertMany([{Name:"Swift",Model:"DTS",Rented_user_count:1,Mileage:18,Transmission:"automatic",Rent:1300,Fuel:"petrol",Image_url:"https://adaksjd.com"}])
+db.taskcollection.insertMany([{Name: "Baleno",Model: "SUV",Rented_user_count: 7,Mileage: 28,Transmission: "gear",Rent: 1900,Fuel: "petrol",Image_url: "https://ahddjksjd.com"}])
+db.taskcollection.insertMany([{Name: "Honda",Model: "SUV",Rented_user_count: 89,Mileage: 22,Transmission: "automatic", Rent: 2900,  Fuel: "gas", Image_url: "https://lkdijund.com"}])
+db.taskcollection.insertMany([{Name: "Creta",Model: "Thar",Rented_user_count: 9,Mileage: 20,Transmission: "automatic", Rent: 1500, Fuel: "diesel",Image_url: "https://ljhcdnd.com"}])
+db.taskcollection.insertMany([{Name: "Venus",Model: "DTS",Rented_user_count: 12,Mileage: 15,Transmission: "automatic", Rent: 1500,Fuel: "gas",Image_url: "https://addhdgdhsjd.com"}])
+db.taskcollection.insertMany([{Name: "Mercedes",Model: "Maybach",Rented_user_count: 87,Mileage: 25,Transmission: "gear",Rent: 5950,Fuel: "petrol",Image_url: "https://pijdhbfhfh.com"}])
+db.taskcollection.insertMany([{Name: "Tata",Model: "Punch",Rented_user_count: 65,Mileage: 30,Transmission: "automatic",Rent: 8958,Fuel: "diesel",Image_url: "https://hjgdsjfh.com"}])
+db.taskcollection.insertMany([{Name: "Nissan",Model: "Magnite",Rented_user_count: 40,Mileage: 27,Transmission: "gear",Rent: 4568,Fuel: "petrol",Image_url: "https://iuhbfffg.com"}])
+db.taskcollection.insertMany([{Name: "Jaguar",Model: "Land Rover",Rented_user_count: 4,Mileage: 32,Transmission: "gear",Rent: 40568,Fuel: "electric",Image_url: "https://idgccfjg.com"}])
+db.taskcollection.insertMany([{Name: "Toyota",Model: "Belta"Rented_user_count: 5,Mileage: 21,Transmission: "automatic",Rent: 4682,Fuel: "petrol",Image_url: "https://iudhjf.com"}])
+
+//TO DISPLAY THE DATA IN A PRETTY FORMAT
+db.taskcollection.find().pretty()
+
+
+
+//TO ARRANGE THE DATA WITH A GIVEN CONDITION
+db.taskcollection.find({Mileage:{$gt:25}})
+//the datas which has mileage greater than 25 will get displayed
+
+db.taskcollection.find({Mileage:{$lt:20}})
+//the datas which has mileage lesser than 20 will get displayed
+
+
+
+
+//SORT THE DATAS IN ASCENDING ORDER WITH RESPECT TO MILEAGE
+db.taskcollection.find().sort({Mileage:1}})
+
+
+
+//SORT THE DATAS IN DESCENDING ORDER WITH RESPECT TO MILEAGE
+db.taskcollection.find().sort({Mileage:-1}})
+
+
