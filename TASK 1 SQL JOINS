@@ -1,0 +1,31 @@
+CREATE TABLE customers(CusID int PRIMARY KEY,CusName varchar(30),CusCity varchar(30));
+INSERT INTO customers VALUES(1,'Coha','Italy');
+INSERT INTO customers VALUES(2,'Marie','Mexico');
+INSERT INTO customers VALUES(3,'Alia','LA');
+INSERT INTO customers VALUES(4,'Mike','Germany');
+INSERT INTO customers VALUES(5,'Zeke','Spain');
+INSERT INTO customers VALUES(6,'Traye','Thailand');
+INSERT INTO customers VALUES(7,'Jordan','Singapore');
+INSERT INTO customers VALUES(8,'Kath','Korea');
+INSERT INTO customers VALUES(9,'Jared','Japan');
+INSERT INTO customers VALUES(10,'Ben','India');
+SELECT * FROM customers;
+CREATE TABLE orderr(OrID int,CusId int,OrCost int);
+INSERT INTO orderr VALUES(89,1,987);
+INSERT INTO orderr VALUES(25,3,5215);
+INSERT INTO orderr VALUES(58,11,2215);
+INSERT INTO orderr VALUES(57,5,1525);
+INSERT INTO orderr VALUES(36,6,455);
+INSERT INTO orderr VALUES(81,8,2454);
+INSERT INTO orderr VALUES(95,9,5452);
+INSERT INTO orderr VALUES(45,10,7532);
+SELECT * FROM orderr;
+
+-- INNER JOIN
+SELECT customers.CusID,customers.CusName,orderr.OrCost FROM orderr INNER JOIN customers ON customers.CusID=orderr.CusID;
+
+-- LEFT JOIN
+SELECT customers.CusID,customers.CusName,orderr.OrCost FROM orderr LEFT JOIN customers ON customers.CusID=orderr.CusID;
+
+-- RIGHT JOIN
+SELECT customers.CusID,customers.CusName,orderr.OrCost FROM orderr RIGHT JOIN customers ON customers.CusID=orderr.CusID;
