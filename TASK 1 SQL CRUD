@@ -1,0 +1,47 @@
+-- create table
+CREATE TABLE students(ID int,NAME varchar(20),GENDER varchar(20),CITY varchar(20),AGE int);
+-- insert some values
+INSERT INTO students VALUES(1,'Roha','Female','Cbe',21);
+INSERT INTO students VALUES(2,'Rahul','Male','Trichy',27);
+INSERT INTO students VALUES(3,'Zora','Female','Salem',26);
+INSERT INTO students VALUES(4,'Tara','Female','Chennai',25);
+INSERT INTO students VALUES(5,'Ved','Male','Karur',22);
+INSERT INTO students VALUES(6,'Mick','Female','Cochin',23);
+INSERT INTO students VALUES(7,'Zeke','Male','Vellore',24);
+INSERT INTO students VALUES(8,'Sam','Female','Pondy',29);
+INSERT INTO students VALUES(9,'Roak','Male','Tanjore',28);
+INSERT INTO students VALUES(10,'Sara','Female','Erode',20);
+-- read table
+SELECT * FROM students;
+SELECT NAME, AGE FROM students WHERE GENDER='Male';
+-- alter or update table
+ALTER TABLE students add COURSE varchar(20);
+UPDATE students set COURSE="Computer" where ID=1; 
+UPDATE students set COURSE="Biology" where NAME='Rahul'; 
+UPDATE students set COURSE="Computer" where ID=3; 
+UPDATE students set COURSE="Biology" where CITY='Chennai'; 
+UPDATE students set COURSE="Zoology" where ID=5; 
+UPDATE students set COURSE="Computer" where NAME='Mick'; 
+UPDATE students set COURSE="Zoology" where ID=7; 
+UPDATE students set COURSE="Chemistry" where CITY='Pondy'; 
+UPDATE students set COURSE="Nuron" where ID=9; 
+UPDATE students set COURSE="Nuron" where NAME='Sara'; 
+SELECT * FROM students;
+-- delete 
+-- DELETE FROM students WHERE COURSE="Zoology";
+-- SELECT * FROM students;
+
+-- TASK 1(SORT THE TABLE ACCORDING TO AGE)
+SELECT * FROM students ORDER BY AGE asc;
+SELECT * FROM students ORDER BY AGE desc;
+
+-- TASK 2(COUNT THE NO. OF PERSONS WHO CHOSE A PARTICULAR COURSE)
+SELECT COUNT(COURSE) as Computer FROM students WHERE COURSE="Computer";
+SELECT COUNT(COURSE) as Biology FROM students WHERE COURSE="Biology";
+SELECT COUNT(COURSE) as Zoology FROM students WHERE COURSE="Zoology";
+SELECT COUNT(COURSE) as Chemistry FROM students WHERE COURSE="Chemistry";
+SELECT COUNT(COURSE) as Nuron FROM students WHERE COURSE="Nuron";
+
+-- TASK 3(GET THE SUM AND AVG OF THE ID)
+SELECT SUM(ID) AS TOTAL FROM students;
+SELECT AVG(ID) AS AVGNO FROM students;
